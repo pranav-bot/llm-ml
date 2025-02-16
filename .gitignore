@@ -1,0 +1,22 @@
+# .gitignore
+
+# Environment variables file (store sensitive keys)
+.env
+
+# Virtual environment directory (ignore all virtual environment files)
+venv/
+
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# IDE configuration files
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+google-cloud-cli-linux-x86_64.tar.gz
+
+google-cloud-sdk
