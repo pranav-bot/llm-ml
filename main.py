@@ -1,52 +1,100 @@
 import pickle
-from analyze import Analyzer
-from knn import KNNParams  # Assuming KNNParams is defined in knn.py
 import sys
-sys.path.append('/home/shin0bi/dev/llm-ml/')
-
-def model_name_and_hyperparameters(model_path):
-    """
-    Loads the pickled model and extracts its hyperparameters if available.
-    """
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
-
-    # Inspect the type of the model
-    model_type = model
-
-    if hasattr(model, 'get_params'):
-        params = model.get_params()
-        return model_type, params
-    else:
-        print("This model does not expose hyperparameters via get_params.")
-        return model_type, {}
+import json
+from inputModule import InputModule
+from preprocessingAgents import PreprocessingAgent
+from classificationAgents import ClassificationAgents
+from regressionAgent import RegressionAgents
 
 def main():
-    model_info = model_name_and_hyperparameters('best_knn_model.pkl')
-    model_class, model_hyperparameters = model_info[0], model_info[1]
+    choice = input("CLassification and Regression")
+
+    if choice=='1':
+        print(1)
+        userInput = InputModule()
+        userInput.take_input()
+        userInput.display_inputs()
+
+        eda = userInput.eda()
+
+        preprocessing_agent = PreprocessingAgent(
+            domian=userInput.domain,
+            model_path=userInput.model_path,
+            dataset_path=userInput.dataset_path,
+            preprocessing_code=userInput.preprocessing_code,
+            eda=userInput.eda(),
+            current_metrics=userInput.current_metrics()
+            
+        )
+
+            # Call the crew method (which now takes no parameters) to build the crew.
+        pp_crew = preprocessing_agent.crew()
+        pp_results = pp_crew.kickoff()
+
+        classification_agent = ClassificationAgents(
+            domian=userInput.domain,
+            model_path=userInput.model_path,
+            dataset_path=userInput.dataset_path,
+            preprcoessing_code=userInput.preprocessing_code,
+            improved_preprocessing_code= pp_results,
+            eda=userInput.eda(),
+            current_metrics=userInput.current_metrics()
+        )
+
+        ca_crew = classification_agent.crew()
+        ca_results = ca_crew.kickoff()
+
+        print(ca_results.raw)
+        
+
+
+        filename = "eda.json"
+
+        with open(filename, 'w') as json_file:
+            json.dump(userInput.eda(), json_file, indent=4) 
     
-    # Create the Analyzer instance with all necessary parameters.
-    # If KNNParams is a dict and you need it hashable, you might use:
-    #    frozenset(KNNParams.items())
-    # However, here we assume KNNParams is already in an acceptable format.
-    analyzer_agent = Analyzer(
-        model_class=model_class,
-        model_all_hyperparameters=KNNParams,
-        model_hyperparameters=model_hyperparameters,
-        model_domain='iris classification dataset'
-    )
-    
-    # Call the crew method (which now takes no parameters) to build the crew.
-    crew_instance = analyzer_agent.crew()
-    results = crew_instance.kickoff()
-    if isinstance(results, list) and results:
-        best_parameters = results[0]
     else:
-        best_parameters = results
-    
-    # Print only the best parameters output.
-    print("Best Parameters:")
-    print(results.raw)
+        print(2)
+        userInput = InputModule()
+        userInput.take_input()
+        userInput.display_inputs()
+
+        preprocessing_agent = PreprocessingAgent(
+            domian=userInput.domain,
+            model_path=userInput.model_path,
+            dataset_path=userInput.dataset_path,
+            preprocessing_code=userInput.preprocessing_code,
+            eda=userInput.eda(),
+            current_metrics=userInput.current_metrics()
+            
+        )
+
+            # Call the crew method (which now takes no parameters) to build the crew.
+        pp_crew = preprocessing_agent.crew()
+        pp_results = pp_crew.kickoff()
+
+        regression_agent = RegressionAgents(
+            domian=userInput.domain,
+            model_path=userInput.model_path,
+            dataset_path=userInput.dataset_path,
+            preprocessing_code=userInput.preprocessing_code,
+            improved_preprocessing_code= pp_results,
+            eda=userInput.eda(),
+            current_metrics=userInput.current_metrics()
+        )
+
+        ra_crew = regression_agent.crew()
+        ra_results = ra_crew.kickoff()
+
+        print(ra_results.raw)
+        
+
+
+        filename = "eda.json"
+
+        with open(filename, 'w') as json_file:
+            json.dump(userInput.eda(), json_file, indent=4) 
+        
 
 if __name__ == "__main__":
     main()

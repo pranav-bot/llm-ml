@@ -1,0 +1,11 @@
+{
+    "best_parameters": {
+        "algorithm": "auto",
+        "metric": "manhattan",
+        "n_neighbors": 11,
+        "weights": "distance"
+    },
+    "mean_absolute_error": 72830.82597876106,
+    "mean_squared_error": 8823482492.620752,
+    "r2_score": 0.3343126832558597
+}

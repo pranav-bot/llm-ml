@@ -1,0 +1,15 @@
+input:
+model pkl file
+dataset
+preprocessing code 
+
+
+input module(done)
+understand the data set
+Understand the preprocessing code and improve it if required
+Extract current model params
+improve params
+
+rl loop (optional)
+
+comparison

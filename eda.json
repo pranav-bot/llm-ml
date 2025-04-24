@@ -1,0 +1,227 @@
+{
+    "missing_values_count": {
+        "longitude": 0,
+        "latitude": 0,
+        "housing_median_age": 0,
+        "total_rooms": 0,
+        "total_bedrooms": 207,
+        "population": 0,
+        "households": 0,
+        "median_income": 0,
+        "median_house_value": 0,
+        "ocean_proximity": 0
+    },
+    "missing_values_percentage": {
+        "longitude": 0.0,
+        "latitude": 0.0,
+        "housing_median_age": 0.0,
+        "total_rooms": 0.0,
+        "total_bedrooms": 1.002906976744186,
+        "population": 0.0,
+        "households": 0.0,
+        "median_income": 0.0,
+        "median_house_value": 0.0,
+        "ocean_proximity": 0.0
+    },
+    "duplicate_rows": 0,
+    "columns": [
+        "longitude",
+        "latitude",
+        "housing_median_age",
+        "total_rooms",
+        "total_bedrooms",
+        "population",
+        "households",
+        "median_income",
+        "median_house_value",
+        "ocean_proximity"
+    ],
+    "dtypes": {
+        "longitude": "float64",
+        "latitude": "float64",
+        "housing_median_age": "float64",
+        "total_rooms": "float64",
+        "total_bedrooms": "float64",
+        "population": "float64",
+        "households": "float64",
+        "median_income": "float64",
+        "median_house_value": "float64",
+        "ocean_proximity": "object"
+    },
+    "numerical_columns": [
+        "longitude",
+        "latitude",
+        "housing_median_age",
+        "total_rooms",
+        "total_bedrooms",
+        "population",
+        "households",
+        "median_income",
+        "median_house_value"
+    ],
+    "categorical_columns": [
+        "ocean_proximity"
+    ],
+    "numerical_summary": {
+        "longitude": {
+            "count": 20640.0,
+            "mean": -119.56970445736432,
+            "std": 2.0035317235025882,
+            "min": -124.35,
+            "25%": -121.8,
+            "50%": -118.49,
+            "75%": -118.01,
+            "max": -114.31
+        },
+        "latitude": {
+            "count": 20640.0,
+            "mean": 35.63186143410853,
+            "std": 2.1359523974571153,
+            "min": 32.54,
+            "25%": 33.93,
+            "50%": 34.26,
+            "75%": 37.71,
+            "max": 41.95
+        },
+        "housing_median_age": {
+            "count": 20640.0,
+            "mean": 28.639486434108527,
+            "std": 12.58555761211165,
+            "min": 1.0,
+            "25%": 18.0,
+            "50%": 29.0,
+            "75%": 37.0,
+            "max": 52.0
+        },
+        "total_rooms": {
+            "count": 20640.0,
+            "mean": 2635.7630813953488,
+            "std": 2181.615251582795,
+            "min": 2.0,
+            "25%": 1447.75,
+            "50%": 2127.0,
+            "75%": 3148.0,
+            "max": 39320.0
+        },
+        "total_bedrooms": {
+            "count": 20433.0,
+            "mean": 537.8705525375618,
+            "std": 421.3850700740323,
+            "min": 1.0,
+            "25%": 296.0,
+            "50%": 435.0,
+            "75%": 647.0,
+            "max": 6445.0
+        },
+        "population": {
+            "count": 20640.0,
+            "mean": 1425.4767441860465,
+            "std": 1132.462121765341,
+            "min": 3.0,
+            "25%": 787.0,
+            "50%": 1166.0,
+            "75%": 1725.0,
+            "max": 35682.0
+        },
+        "households": {
+            "count": 20640.0,
+            "mean": 499.5396802325581,
+            "std": 382.32975283161073,
+            "min": 1.0,
+            "25%": 280.0,
+            "50%": 409.0,
+            "75%": 605.0,
+            "max": 6082.0
+        },
+        "median_income": {
+            "count": 20640.0,
+            "mean": 3.8706710029069766,
+            "std": 1.8998217179452688,
+            "min": 0.4999,
+            "25%": 2.5633999999999997,
+            "50%": 3.5347999999999997,
+            "75%": 4.74325,
+            "max": 15.0001
+        },
+        "median_house_value": {
+            "count": 20640.0,
+            "mean": 206855.81690891474,
+            "std": 115395.61587441387,
+            "min": 14999.0,
+            "25%": 119600.0,
+            "50%": 179700.0,
+            "75%": 264725.0,
+            "max": 500001.0
+        }
+    },
+    "numerical_skewness": {
+        "longitude": -0.2978012079524362,
+        "latitude": 0.46595300370997006,
+        "housing_median_age": 0.060330637599136865,
+        "total_rooms": 4.147343450632158,
+        "total_bedrooms": 3.459546331523342,
+        "population": 4.93585822672712,
+        "households": 3.410437711667147,
+        "median_income": 1.6466567021344465,
+        "median_house_value": 0.9777632739098341
+    },
+    "numerical_kurtosis": {
+        "longitude": -1.3301523662288144,
+        "latitude": -1.1177597814979523,
+        "housing_median_age": -0.800628853586641,
+        "total_rooms": 32.63092699920872,
+        "total_bedrooms": 21.985575060645203,
+        "population": 73.55311639416514,
+        "households": 22.057988059658797,
+        "median_income": 4.952524101991511,
+        "median_house_value": 0.3278702429465872
+    },
+    "numerical_IQR": {
+        "longitude": 3.789999999999992,
+        "latitude": 3.780000000000001,
+        "housing_median_age": 19.0,
+        "total_rooms": 1700.25,
+        "total_bedrooms": 351.0,
+        "population": 938.0,
+        "households": 325.0,
+        "median_income": 2.17985,
+        "median_house_value": 145125.0
+    },
+    "high_correlation_pairs": [
+        {
+            "Variable 1": "latitude",
+            "Variable 2": "longitude",
+            "Correlation": 0.9246644339150368
+        },
+        {
+            "Variable 1": "total_bedrooms",
+            "Variable 2": "total_rooms",
+            "Correlation": 0.9303795046865031
+        },
+        {
+            "Variable 1": "population",
+            "Variable 2": "total_rooms",
+            "Correlation": 0.8571259728659829
+        },
+        {
+            "Variable 1": "population",
+            "Variable 2": "total_bedrooms",
+            "Correlation": 0.8777467431529311
+        },
+        {
+            "Variable 1": "households",
+            "Variable 2": "total_rooms",
+            "Correlation": 0.9184844926543111
+        },
+        {
+            "Variable 1": "households",
+            "Variable 2": "total_bedrooms",
+            "Correlation": 0.9797282708045709
+        },
+        {
+            "Variable 1": "households",
+            "Variable 2": "population",
+            "Correlation": 0.9072222660959659
+        }
+    ]
+}
